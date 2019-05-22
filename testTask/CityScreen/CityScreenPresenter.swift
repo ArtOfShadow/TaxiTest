@@ -9,11 +9,6 @@
 import Foundation
 
 class CityScreenPresenter: CityScreenPresenterProtocol {
-    func updateCities() {
-       CityRequest.request()
-    }
-    
-    
     
     var cellDescriptions: [CollectionViewCellDescription] = []
     var cities: [City]?
@@ -33,6 +28,10 @@ class CityScreenPresenter: CityScreenPresenterProtocol {
     
     func didLoad() {
         self.viewInput.showLoading()
+        CityRequest.request()
+    }
+    
+    func updateCities() {
         CityRequest.request()
     }
 }
